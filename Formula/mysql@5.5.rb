@@ -1,6 +1,7 @@
 class MysqlAT55 < Formula
   desc "Open source relational database management system"
   homepage "https://dev.mysql.com/doc/refman/5.5/en/"
+<<<<<<< HEAD
   url "https://dev.mysql.com/get/Downloads/MySQL-5.5/mysql-5.5.55.tar.gz"
   sha256 "9af0a504e2603b0bc0c7c3a4a747df064fb51670a0022b1ad6114f9058b64171"
 
@@ -8,6 +9,15 @@ class MysqlAT55 < Formula
     sha256 "8c6430a47464fbb617c8a53c906a1d522f6519e824fd68490ba41e8fe14c3c01" => :sierra
     sha256 "631566f6eef4eb72a93461d5aa8e99e7724798fea41b9648641c829121f5e892" => :el_capitan
     sha256 "7ebb9251c26e367375c3aae7288512cb044d37d313975a3c8dec8e9028785748" => :yosemite
+=======
+  url "https://dev.mysql.com/get/Downloads/MySQL-5.5/mysql-5.5.56.tar.gz"
+  sha256 "3fd30a24267cef84ee8aeb327a5b08a669d3ab8c4d76d1b1b3b66d26cf777a0a"
+
+  bottle do
+    sha256 "57a68b94580d89ac07c633904da7218bb73092dcbc7d31071d96090a9b65c517" => :sierra
+    sha256 "867a059b4ea2769b2c54b6124f3c6d0558bdea87d5880043b084850d226d91f3" => :el_capitan
+    sha256 "477c1abafe1181b27fde3588725e475a0204159621214953deeaf3d4c4c21efa" => :yosemite
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 
   keg_only :versioned_formula
@@ -48,7 +58,10 @@ class MysqlAT55 < Formula
       -DINSTALL_DOCDIR=share/doc/#{name}
       -DINSTALL_INFODIR=share/info
       -DINSTALL_MYSQLSHAREDIR=share/mysql
+<<<<<<< HEAD
       -DWITH_SSL=yes
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
       -DWITH_SSL=system
       -DDEFAULT_CHARSET=utf8
       -DDEFAULT_COLLATION=utf8_general_ci
@@ -107,6 +120,18 @@ class MysqlAT55 < Formula
 
     libexec.install bin/"mysqlaccess"
     libexec.install bin/"mysqlaccess.conf"
+<<<<<<< HEAD
+=======
+
+    # Install my.cnf that binds to 127.0.0.1 by default
+    (buildpath/"my.cnf").write <<-EOS.undent
+      # Default Homebrew MySQL server config
+      [mysqld]
+      # Only allow connections from localhost
+      bind-address = 127.0.0.1
+    EOS
+    etc.install "my.cnf"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 
   def post_install
@@ -123,6 +148,11 @@ class MysqlAT55 < Formula
     A "/etc/my.cnf" from another install may interfere with a Homebrew-built
     server starting up correctly.
 
+<<<<<<< HEAD
+=======
+    MySQL is configured to only allow connections from localhost by default
+
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     To connect:
         #{opt_bin}/mysql -uroot
     EOS
@@ -142,7 +172,10 @@ class MysqlAT55 < Formula
       <key>ProgramArguments</key>
       <array>
         <string>#{opt_bin}/mysqld_safe</string>
+<<<<<<< HEAD
         <string>--bind-address=127.0.0.1</string>
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
         <string>--datadir=#{datadir}</string>
       </array>
       <key>RunAtLoad</key>
@@ -162,7 +195,11 @@ class MysqlAT55 < Formula
       "--basedir=#{prefix}", "--datadir=#{dir}", "--tmpdir=#{dir}"
 
       pid = fork do
+<<<<<<< HEAD
         exec bin/"mysqld", "--bind-address=127.0.0.1", "--datadir=#{dir}"
+=======
+        exec bin/"mysqld", "--datadir=#{dir}"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
       end
       sleep 2
 

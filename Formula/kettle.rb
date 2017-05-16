@@ -22,7 +22,11 @@ class Kettle < Formula
     end
   end
 
+<<<<<<< HEAD
   plist_options :manual => "kettle"
+=======
+  plist_options :manual => "pdicarte #{HOMEBREW_PREFIX}/etc/kettle/carte-config.xml"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

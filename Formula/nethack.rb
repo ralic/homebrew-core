@@ -18,7 +18,11 @@ class Nethack < Formula
   skip_clean "libexec/save"
 
   def install
+<<<<<<< HEAD
     # Build everything in-order; no multi builds.
+=======
+    # Build everything in-order
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     ENV.deparallelize
 
     # Generate makefiles for OS X
@@ -27,10 +31,15 @@ class Nethack < Formula
         hintfile = "macosx10.10"
       elsif MacOS.version >= :lion
         hintfile = "macosx10.7"
+<<<<<<< HEAD
       elsif MacOS.version >= :leopard
         hintfile = "macosx10.5"
       else
         hintfile = "macosx"
+=======
+      else
+        hintfile = "macosx10.5"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
       end
 
       inreplace "hints/#{hintfile}",

@@ -16,7 +16,14 @@ class Sqoop < Formula
 
   # Patch for readlink -f missing on macOS. Should be fixed in 1.4.7.
   # https://issues.apache.org/jira/browse/SQOOP-2531
+<<<<<<< HEAD
   patch :DATA
+=======
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/77adf73/sqoop/1.4.6.patch"
+    sha256 "f13af5c6525f5bf8f3b993c3ece4f21133680fdbebb663fd4b7b6db9039b07b4"
+  end
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   def sqoop_envs
     <<-EOS.undent
@@ -49,6 +56,7 @@ class Sqoop < Formula
     assert_match /#{version}/, shell_output("#{bin}/sqoop version")
   end
 end
+<<<<<<< HEAD
 
 __END__
 diff --git a/bin/sqoop-codegen b/bin/sqoop-codegen
@@ -1268,3 +1276,5 @@ index d047309..db32c43 100755
 +prgm=`follow $0`
  bin=`dirname ${prgm}`
  bin=`cd ${bin} && pwd`
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.

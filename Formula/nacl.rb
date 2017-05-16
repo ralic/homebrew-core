@@ -27,6 +27,7 @@ class Nacl < Formula
 
     system "./do" # This takes a while since it builds *everything*
 
+<<<<<<< HEAD
     # NaCL has an odd compilation model (software by djb, who'da thunk it?)
     # and installs the resulting binaries in a directory like:
     #    <nacl source>/build/<hostname>/lib/<arch>/libnacl.a
@@ -37,6 +38,15 @@ class Nacl < Formula
     # It also builds both x86 and x86_64 copies if your compiler can
     # handle it. Here we only install one copy, based on if you're a
     # 64bit system or not. A --universal could come later though I guess.
+=======
+    # NaCL has an odd compilation model and installs the resulting
+    # binaries in a directory like:
+    #    <nacl source>/build/<hostname>/lib/<arch>/libnacl.a
+    #    <nacl source>/build/<hostname>/include/<arch>/crypto_box.h
+    #
+    # It also builds both x86 and x86_64 copies if your compiler can
+    # handle it, but we install only one.
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     archstr = Hardware::CPU.is_64_bit? ? "amd64" : "x86"
 
     # Don't include cpucycles.h

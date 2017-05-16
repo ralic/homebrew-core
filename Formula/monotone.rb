@@ -1,7 +1,12 @@
 class Monotone < Formula
   desc "Distributed version control system (DVCS)"
+<<<<<<< HEAD
   homepage "http://monotone.ca/"
   url "http://www.monotone.ca/downloads/1.1/monotone-1.1.tar.bz2"
+=======
+  homepage "https://www.monotone.ca/"
+  url "https://www.monotone.ca/downloads/1.1/monotone-1.1.tar.bz2"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   sha256 "f95cf60a22d4e461bec9d0e72f5d3609c9a4576fb1cc45f553d0202ce2e38c88"
   revision 2
 

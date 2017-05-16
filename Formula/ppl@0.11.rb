@@ -16,7 +16,10 @@ class PplAT011 < Formula
 
   keg_only :versioned_formula
 
+<<<<<<< HEAD
   depends_on "m4" => :build if MacOS.version < :leopard
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   depends_on "gmp@4"
 
   # https://www.cs.unipr.it/mantis/view.php?id=596

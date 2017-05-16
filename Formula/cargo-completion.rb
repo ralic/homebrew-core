@@ -8,6 +8,11 @@ class CargoCompletion < Formula
 
   bottle :unneeded
 
+<<<<<<< HEAD
+=======
+  conflicts_with "rust", :because => "both install shell completion for cargo"
+
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   def install
     bash_completion.install "src/etc/cargo.bashcomp.sh" => "cargo"
     zsh_completion.install "src/etc/_cargo"

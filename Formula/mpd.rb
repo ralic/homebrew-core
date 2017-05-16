@@ -87,8 +87,11 @@ class Mpd < Formula
     ]
 
     args << "--disable-mad" if build.without? "mad"
+<<<<<<< HEAD
     args << "--disable-curl" if MacOS.version <= :leopard
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     args << "--enable-zzip" if build.with? "libzzip"
     args << "--enable-lastfm" if build.with? "lastfm"
     args << "--disable-lame-encoder" if build.without? "lame"

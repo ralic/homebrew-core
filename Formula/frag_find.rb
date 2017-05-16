@@ -1,7 +1,11 @@
 class FragFind < Formula
   desc "Hash-based carver tool (formerly 'NPS Bloom Filter package')"
   homepage "https://github.com/simsong/frag_find"
+<<<<<<< HEAD
   url "http://digitalcorpora.org/downloads/frag_find/frag_find-1.0.0.tar.gz"
+=======
+  url "https://digitalcorpora.org/downloads/frag_find/frag_find-1.0.0.tar.gz"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   sha256 "0ef28c18bbf80da78cf1c7dea3a75ca4741e600b38b7c2c71a015a794d9ab466"
   revision 1
 

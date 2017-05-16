@@ -39,7 +39,14 @@ class Vapoursynth < Formula
   end
 
   test do
+<<<<<<< HEAD
     system bin/"vspipe", "--version"
     system "python3", "-c", "import vapoursynth"
+=======
+    py3 = Language::Python.major_minor_version "python3"
+    ENV.prepend_path "PYTHONPATH", lib/"python#{py3}/site-packages"
+    system "python3", "-c", "import vapoursynth"
+    system bin/"vspipe", "--version"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 end

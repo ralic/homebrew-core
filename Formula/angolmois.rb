@@ -1,6 +1,10 @@
 class Angolmois < Formula
   desc "BM98-like rhythm game"
+<<<<<<< HEAD
   homepage "http://mearie.org/projects/angolmois/"
+=======
+  homepage "https://mearie.org/projects/angolmois/"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   stable do
     url "https://github.com/lifthrasiir/angolmois/archive/angolmois-2.0-alpha2.tar.gz"

@@ -46,7 +46,10 @@
   "gcc49": "gcc@4.9",
   "gcc5": "gcc@5",
   "gcc6": "gcc",
+<<<<<<< HEAD
   "gcc@6": "gcc",
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   "geode": "apache-geode",
   "giflib5": "giflib@5",
   "giflib@5": "giflib",
@@ -64,6 +67,10 @@
   "google-perftools": "gperftools",
   "gradle214": "gradle@2.14",
   "grails25": "grails@2.5",
+<<<<<<< HEAD
+=======
+  "grunt": "grunt-cli",
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   "gsl1": "gsl@1",
   "gst-plugins-bad010": "gst-plugins-bad@0.10",
   "gst-plugins-base010": "gst-plugins-base@0.10",

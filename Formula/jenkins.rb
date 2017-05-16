@@ -1,8 +1,13 @@
 class Jenkins < Formula
   desc "Extendable open source continuous integration server"
   homepage "https://jenkins-ci.org"
+<<<<<<< HEAD
   url "http://mirrors.jenkins-ci.org/war/2.58/jenkins.war"
   sha256 "3b296f499cbe5bc7314600a984747cf99490c6e14e6394d53f95c97c956a45fc"
+=======
+  url "http://mirrors.jenkins-ci.org/war/2.61/jenkins.war"
+  sha256 "453aa7641eac92b3f5d8f81db8ea15b85d407085be07a98b1d80405402aab1c0"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   head do
     url "https://github.com/jenkinsci/jenkins.git"

@@ -1,8 +1,13 @@
 class Openssh < Formula
   desc "OpenBSD freely-licensed SSH connectivity tools"
   homepage "https://www.openssh.com/"
+<<<<<<< HEAD
   url "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-7.5p1.tar.gz"
   mirror "https://www.mirrorservice.org/pub/OpenBSD/OpenSSH/portable/openssh-7.5p1.tar.gz"
+=======
+  url "https://www.mirrorservice.org/pub/OpenBSD/OpenSSH/portable/openssh-7.5p1.tar.gz"
+  mirror "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-7.5p1.tar.gz"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   version "7.5p1"
   sha256 "9846e3c5fab9f0547400b4d2c017992f914222b3fd1f8eee6c7dc6bc5e59f9f0"
   revision 1
@@ -17,8 +22,11 @@ class Openssh < Formula
   # https://github.com/Homebrew/homebrew-dupes/pull/482#issuecomment-118994372
 
   depends_on "openssl"
+<<<<<<< HEAD
   depends_on "ldns" => :optional
   depends_on "pkg-config" => :build if build.with? "ldns"
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   # Both these patches are applied by Apple.
   patch do
@@ -43,6 +51,7 @@ class Openssh < Formula
     # We introduce this issue with patching, it's not an upstream bug.
     inreplace "sandbox-darwin.c", "@PREFIX@/share/openssh", etc/"ssh"
 
+<<<<<<< HEAD
     args = %W[
       --with-libedit
       --with-kerberos5
@@ -55,6 +64,14 @@ class Openssh < Formula
     args << "--with-ldns" if build.with? "ldns"
 
     system "./configure", *args
+=======
+    system "./configure", "--with-libedit",
+                          "--with-kerberos5",
+                          "--prefix=#{prefix}",
+                          "--sysconfdir=#{etc}/ssh",
+                          "--with-pam",
+                          "--with-ssl-dir=#{Formula["openssl"].opt_prefix}"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     system "make"
     system "make", "install"
 

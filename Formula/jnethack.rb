@@ -1,9 +1,13 @@
 require "etc"
 
 # Nethack the way God intended it to be played: from a terminal.
+<<<<<<< HEAD
 
 # This formula is based on Nethack formula.
 # The patches in DATA section are shamelessly stolen from MacPorts' jnethack portfile.
+=======
+# This formula is based on Nethack formula.
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
 class Jnethack < Formula
   desc "Japanese localization of Nethack"
@@ -29,7 +33,15 @@ class Jnethack < Formula
     sha256 "fbc071f6b33c53d89e8f13319ced952e605499a21d2086077296c631caff7389"
   end
 
+<<<<<<< HEAD
   patch :DATA
+=======
+  # Patch from MacPorts' jnethack portfile
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/e9653f1/jnethack/3.4.3-0.11.patch"
+    sha256 "6340de3784ee7b4d35fcf715ebbf08ec8e20214b0c2ae53f9c717afdae467c46"
+  end
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   def install
     # Build everything in-order; no multi builds.
@@ -78,6 +90,7 @@ class Jnethack < Formula
     (libexec+"save").mkpath
   end
 end
+<<<<<<< HEAD
 
 __END__
 --- nethack/src/options.c.orig	2006-08-12 16:45:15.000000000 +0900
@@ -248,3 +261,5 @@ __END__
  extern char *tparm();
  #endif
  
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.

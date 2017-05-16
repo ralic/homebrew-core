@@ -1,7 +1,11 @@
 class Libosinfo < Formula
   desc "The Operating System information database"
   homepage "https://libosinfo.org/"
+<<<<<<< HEAD
   url "https://fedorahosted.org/releases/l/i/libosinfo/libosinfo-1.0.0.tar.gz"
+=======
+  url "https://releases.pagure.org/libosinfo/libosinfo-1.0.0.tar.gz"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   sha256 "f7b425ecde5197d200820eb44401c5033771a5d114bd6390230de768aad0396b"
 
   bottle do
@@ -36,7 +40,15 @@ class Libosinfo < Formula
     ]
 
     args << "--disable-introspection" if build.without? "gobject-introspection"
+<<<<<<< HEAD
     args << "--enable-vala" if build.with? "vala"
+=======
+    if build.with? "vala"
+      args << "--enable-vala"
+    else
+      args << "--disable-vala"
+    end
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
     system "./configure", *args
 
@@ -78,7 +90,14 @@ class Libosinfo < Formula
       for name in hvnames:
         print ("  HV short id " + name)
     EOS
+<<<<<<< HEAD
 
+=======
+    ENV.append_path "GI_TYPELIB_PATH", lib+"girepository-1.0"
+    ENV.append_path "GI_TYPELIB_PATH", Formula["gobject-introspection"].opt_lib+"girepository-1.0"
+    ENV.append_path "PYTHONPATH", lib+"python2.7/site-packages"
+    ENV.append_path "PYTHONPATH", Formula["pygobject3"].opt_lib+"python2.7/site-packages"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     system "python", "test.py"
   end
 end

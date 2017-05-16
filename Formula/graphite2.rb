@@ -1,6 +1,7 @@
 class Graphite2 < Formula
   desc "Smart font renderer for non-Roman scripts"
   homepage "http://graphite.sil.org"
+<<<<<<< HEAD
   revision 1
 
   head "https://github.com/silnrsi/graphite.git"
@@ -24,6 +25,17 @@ class Graphite2 < Formula
     sha256 "dfca853f8ad5b826227e2f5d6dbb0de177e4e4226d255b856c3501fda09dbf3d" => :sierra
     sha256 "271745aed3d0fdf8ded9037df02a404fa883060e7bc46c7c2b9d6f8cbb1022b4" => :el_capitan
     sha256 "325c033b1fd5934ef36735ec2b5ca4c33dd832e80ac09d1164b429e86d71114f" => :yosemite
+=======
+  url "https://github.com/silnrsi/graphite/releases/download/1.3.10/graphite2-1.3.10.tgz"
+  sha256 "90fde3b2f9ea95d68ffb19278d07d9b8a7efa5ba0e413bebcea802ce05cda1ae"
+  head "https://github.com/silnrsi/graphite.git"
+
+  bottle do
+    cellar :any
+    sha256 "8275f72e0fc1aaa42b30b46d2245565571e97d56ebbad3fa94994d235f935eea" => :sierra
+    sha256 "3bdeb624f9cc9e71ad554cfa243ff64eac4b3f948a34ed8e1a6d7f9b168b996d" => :el_capitan
+    sha256 "e26eb396511e1a327a8173653e65960b14a4499738ef5eb7c54c8d8474fdc011" => :yosemite
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 
   depends_on "cmake" => :build

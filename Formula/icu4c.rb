@@ -15,7 +15,11 @@ class Icu4c < Formula
     sha256 "7ce8fa8fba5ba285bfb0278d2e73c01e8d2ff3115a5ad762255cacde6ffeecfb" => :yosemite
   end
 
+<<<<<<< HEAD
   keg_only :provided_by_osx, "macOS provides libicucore.dylib (but nothing else)."
+=======
+  keg_only :provided_by_osx, "macOS provides libicucore.dylib (but nothing else)"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   option :cxx11
 

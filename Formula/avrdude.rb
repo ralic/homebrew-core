@@ -20,7 +20,10 @@ class Avrdude < Formula
     depends_on "libtool" => :build
   end
 
+<<<<<<< HEAD
   depends_on :macos => :snow_leopard # needs GCD/libdispatch
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   depends_on "libusb-compat"
   depends_on "libftdi0"
   depends_on "libelf"

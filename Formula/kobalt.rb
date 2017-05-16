@@ -1,8 +1,13 @@
 class Kobalt < Formula
   desc "Build system"
   homepage "http://beust.com/kobalt"
+<<<<<<< HEAD
   url "https://github.com/cbeust/kobalt/releases/download/1.0.81/kobalt-1.0.81.zip"
   sha256 "46d28eda211ebad007dcbfe45612b2dd74c1a53631a203c7911d9e6264191675"
+=======
+  url "https://github.com/cbeust/kobalt/releases/download/1.0.86/kobalt-1.0.86.zip"
+  sha256 "646327f8b8c7bdb19c5fc4418ccc34905a29ce161a0defbed8d0f7ca8acc87c2"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   bottle :unneeded
 

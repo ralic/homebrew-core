@@ -13,7 +13,11 @@ class Apr < Formula
     sha256 "a4e7a90d12fac10ac788be3472c3e77a12e2db1a889d7be45f521d8387df28a0" => :mavericks
   end
 
+<<<<<<< HEAD
   keg_only :provided_by_osx, "Apple's CLT package contains apr."
+=======
+  keg_only :provided_by_osx, "Apple's CLT package contains apr"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   def install
     ENV["SED"] = "sed" # prevent libtool from hardcoding sed path from superenv

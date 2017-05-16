@@ -27,6 +27,10 @@ class Pygtkglext < Formula
   end
 
   test do
+<<<<<<< HEAD
+=======
+    ENV.append_path "PYTHONPATH", Formula["pygtk"].opt_lib+"python2.7/site-packages/gtk-2.0"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     system "python", "-c", "import pygtk", "pygtk.require('2.0')", "import gtk.gtkgl"
   end
 end

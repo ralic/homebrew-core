@@ -20,7 +20,11 @@ class Libffi < Formula
     depends_on "libtool" => :build
   end
 
+<<<<<<< HEAD
   keg_only :provided_by_osx, "Some formulae require a newer version of libffi."
+=======
+  keg_only :provided_by_osx, "some formulae require a newer version of libffi"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   def install
     system "./autogen.sh" if build.head?

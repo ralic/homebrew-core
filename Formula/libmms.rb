@@ -16,6 +16,7 @@ class Libmms < Formula
   depends_on "pkg-config" => :build
   depends_on "glib"
 
+<<<<<<< HEAD
   # https://trac.macports.org/ticket/27988
   if MacOS.version <= :leopard
     patch :p0 do
@@ -24,6 +25,8 @@ class Libmms < Formula
     end
   end
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   def install
     ENV.append "LDFLAGS", "-liconv"
     system "./configure", "--disable-dependency-tracking",

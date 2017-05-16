@@ -13,8 +13,11 @@ class Casperjs < Formula
     sha256 "8f0ae4b24ce77c1fa4b93f480dcaa24b64dd0b0b8ac10ea695b91c18d1908568" => :yosemite
   end
 
+<<<<<<< HEAD
   # For embedded Phantomjs
   depends_on :macos => :snow_leopard
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   depends_on "phantomjs"
 
   def install

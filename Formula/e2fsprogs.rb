@@ -13,7 +13,11 @@ class E2fsprogs < Formula
     sha256 "8fe4e3379b66e08e34ed1cd51e7e2ec5043fcd9502f1037e08390588c41238ab" => :yosemite
   end
 
+<<<<<<< HEAD
   keg_only "This brew installs several commands which override macOS-provided file system commands."
+=======
+  keg_only "this installs several executables which shadow macOS system commands"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   depends_on "pkg-config" => :build
   depends_on "gettext"

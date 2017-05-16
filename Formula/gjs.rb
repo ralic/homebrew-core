@@ -1,4 +1,5 @@
 class Gjs < Formula
+<<<<<<< HEAD
   desc "Javascript Bindings for GNOME"
   homepage "https://wiki.gnome.org/Projects/Gjs"
   url "https://download.gnome.org/sources/gjs/1.48/gjs-1.48.2.tar.xz"
@@ -8,6 +9,17 @@ class Gjs < Formula
     sha256 "c6c3b714cc5db5e7936317519e746263ae574148f568b51cfb40edbc7a341af1" => :sierra
     sha256 "dd99869f90052c85f6cac41d073c802341de454235e588d2a1fcda697520306b" => :el_capitan
     sha256 "e112d2f46bfa1a6269ce3c0203ffa2576b426d3317dced1f16e7e029fc6a0879" => :yosemite
+=======
+  desc "JavaScript Bindings for GNOME"
+  homepage "https://wiki.gnome.org/Projects/Gjs"
+  url "https://download.gnome.org/sources/gjs/1.48/gjs-1.48.3.tar.xz"
+  sha256 "669b7d78ad98390a762eec50d7cc637e25f196d986c0200d9f1c3a0e0cd90f33"
+
+  bottle do
+    sha256 "d482b9aab25ce9099e3205a438507d34a31b1c252140d034b53e015bd7490326" => :sierra
+    sha256 "7bec881a9a2f7996eee7922801f3f00cbf7db8b22ed64b7573e1cc209f6daf59" => :el_capitan
+    sha256 "ac1d5467c00620cda2bd1cde60d663c7e275298fb4b229108c14ea2cd7cf5255" => :yosemite
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 
   depends_on "pkg-config" => :build
@@ -18,9 +30,12 @@ class Gjs < Formula
 
   needs :cxx11
 
+<<<<<<< HEAD
   # patch submitted upstream: https://bugzilla.gnome.org/show_bug.cgi?id=780350
   patch :DATA
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   resource "mozjs38" do
     url "https://archive.mozilla.org/pub/firefox/releases/38.8.0esr/source/firefox-38.8.0esr.source.tar.bz2"
     sha256 "9475adcee29d590383c4885bc5f958093791d1db4302d694a5d2766698f59982"
@@ -77,6 +92,7 @@ class Gjs < Formula
     system "#{bin}/gjs", "test.js"
   end
 end
+<<<<<<< HEAD
 
 __END__
 diff --git a/gi/arg.cpp b/gi/arg.cpp
@@ -92,3 +108,5 @@ index 5502b00..aacc07d 100644
 
  bool
  _gjs_flags_value_is_valid(JSContext   *context,
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.

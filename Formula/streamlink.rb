@@ -1,6 +1,7 @@
 class Streamlink < Formula
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
+<<<<<<< HEAD
   url "https://github.com/streamlink/streamlink/releases/download/0.5.0/streamlink-0.5.0.tar.gz"
   sha256 "89ab32d4eab487212d124c1eeae16604708cb46bc27a2d797649be2bae8f239b"
 
@@ -9,10 +10,21 @@ class Streamlink < Formula
     sha256 "aef58fa2bb459ba779602121bc7c9084e98bfff18a94b82c1e8682b80809bb16" => :sierra
     sha256 "f54da98b269be94433a1b6a46b9dccc60710677aab1b98ad46d1b9f0edc74f31" => :el_capitan
     sha256 "bc3a4653563a21015b30185468e6f37b0a502fcb92393c3677f49b6a89180a4f" => :yosemite
+=======
+  url "https://github.com/streamlink/streamlink/releases/download/0.6.0/streamlink-0.6.0.tar.gz"
+  sha256 "945a6a0e9e8c3965a83579506219baaa2f89801d463002650d8206adfa39a072"
+
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "feace16791ad2447c2bdf531e2e64fa877c04bd2d52a27bb8beb44fd225c2e66" => :sierra
+    sha256 "fe63a09fb7b1c2312da751808d0294bbcff6e2daab35c799a2688aa6ca8f4471" => :el_capitan
+    sha256 "3c91eb93e0c975e250821fffa1726f0f40e1ba470b9a9fc7fc90473052fd91f8" => :yosemite
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 
   depends_on :python if MacOS.version <= :snow_leopard
 
+<<<<<<< HEAD
   resource "futures" do
     url "https://files.pythonhosted.org/packages/55/db/97c1ca37edab586a1ae03d6892b6633d8eaa23b23ac40c7e5bbc55423c78/futures-3.0.5.tar.gz"
     sha256 "0542525145d5afc984c88f914a0c85c77527f65946617edb5274f72406f981df"
@@ -23,6 +35,8 @@ class Streamlink < Formula
     sha256 "be84544eadc2bb71d4ace39e4984ed2990111f053f24267a07afb4b4e1e5428f"
   end
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   resource "backports.shutil_get_terminal_size" do
     url "https://files.pythonhosted.org/packages/ec/9c/368086faa9c016efce5da3e0e13ba392c9db79e3ab740b763fe28620b18b/backports.shutil_get_terminal_size-1.0.0.tar.gz"
     sha256 "713e7a8228ae80341c70586d1cc0a8caa5207346927e23d09dcbcaf18eadec80"
@@ -33,6 +47,14 @@ class Streamlink < Formula
     sha256 "dd439a7b02433e47968c25a45a76704201c4ef2167deb49830281c379b1a4a9b"
   end
 
+<<<<<<< HEAD
+=======
+  resource "futures" do
+    url "https://files.pythonhosted.org/packages/cc/26/b61e3a4eb50653e8a7339d84eeaa46d1e93b92951978873c220ae64d0733/futures-3.1.1.tar.gz"
+    sha256 "51ecb45f0add83c806c68e4b06106f90db260585b25ef2abfcda0bd95c0132fd"
+  end
+
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   resource "iso-639" do
     url "https://files.pythonhosted.org/packages/5a/8d/27969852f4e664525c3d070e44b2b719bc195f4d18c311c52e57bb93614e/iso-639-0.4.5.tar.gz"
     sha256 "dc9cd4b880b898d774c47fe9775167404af8a85dd889d58f9008035109acce49"
@@ -43,9 +65,20 @@ class Streamlink < Formula
     sha256 "fbeb17bed90d15b1f6d6794aa2ea458e5e273a1d29b6f4939423c97640e14933"
   end
 
+<<<<<<< HEAD
   resource "requests" do
     url "https://files.pythonhosted.org/packages/16/09/37b69de7c924d318e51ece1c4ceb679bf93be9d05973bb30c35babd596e2/requests-2.13.0.tar.gz"
     sha256 "5722cd09762faa01276230270ff16af7acf7c5c45d623868d9ba116f15791ce8"
+=======
+  resource "pycryptodome" do
+    url "https://files.pythonhosted.org/packages/45/ca/f0c2ca6c65084d60f68553cf072de7db0d918c7bb07ece88781f6af24625/pycryptodome-3.4.5.tar.gz"
+    sha256 "be84544eadc2bb71d4ace39e4984ed2990111f053f24267a07afb4b4e1e5428f"
+  end
+
+  resource "requests" do
+    url "https://files.pythonhosted.org/packages/72/46/4abc3f5aaf7bf16a52206bb0c68677a26c216c1e6625c78c5aef695b5359/requests-2.14.2.tar.gz"
+    sha256 "a274abba399a23e8713ffd2b5706535ae280ebe2b8069ee6a941cb089440d153"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 
   resource "singledispatch" do

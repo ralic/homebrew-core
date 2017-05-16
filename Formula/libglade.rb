@@ -3,6 +3,7 @@ class Libglade < Formula
   homepage "https://glade.gnome.org"
   url "https://download.gnome.org/sources/libglade/2.6/libglade-2.6.4.tar.gz"
   sha256 "c41d189b68457976069073e48d6c14c183075d8b1d8077cb6dfb8b7c5097add3"
+<<<<<<< HEAD
   revision 1
 
   bottle do
@@ -12,6 +13,14 @@ class Libglade < Formula
     sha256 "5c650d4a9eb7de60ce0b74a15825b0396a3811df14c51ea53b2d4477cf1835cc" => :yosemite
     sha256 "a9fdc34b5efc22d5193598ca045f6fd05828428c4b691bba1a18082e989b54ed" => :mavericks
     sha256 "256b81161ba3a638eb993d8309c8a1e7172fcb84fea247675597b4232c7db775" => :mountain_lion
+=======
+  revision 2
+
+  bottle do
+    sha256 "e9d7a005ae30c9c63510803f27a85899477e53abb05e8e6dc2332a40e062bf7c" => :sierra
+    sha256 "29eb70db9e6a152942ec1b740fe5f8d6efe54e0887645eadd6c753db95299696" => :el_capitan
+    sha256 "f014633d2870eea3d232620a296721023327e3b43c344f996521e5e77e335023" => :yosemite
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 
   depends_on "pkg-config" => :build

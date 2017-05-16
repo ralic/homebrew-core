@@ -20,8 +20,12 @@ class Cctools < Formula
     sha256 "f9f74d98119d2efd5530f8d98eb7838a77be35576880ecec73fe9d535aa2afb0" => :mountain_lion
   end
 
+<<<<<<< HEAD
   keg_only :provided_by_osx,
     "This package duplicates tools shipped by Xcode."
+=======
+  keg_only :provided_by_osx, "this package duplicates tools shipped by Xcode"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   depends_on :ld64
 

@@ -1,7 +1,12 @@
 class Ipbt < Formula
   desc "Program for recording a UNIX terminal session"
+<<<<<<< HEAD
   homepage "http://www.chiark.greenend.org.uk/~sgtatham/ipbt/"
   url "http://www.chiark.greenend.org.uk/~sgtatham/ipbt/ipbt-20160908.4a07ab0.tar.gz"
+=======
+  homepage "https://www.chiark.greenend.org.uk/~sgtatham/ipbt/"
+  url "https://www.chiark.greenend.org.uk/~sgtatham/ipbt/ipbt-20160908.4a07ab0.tar.gz"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   version "20160908"
   sha256 "7414ba38041c283db3b2c7bc119eecfcb193629c50f8509bd4693142813cea5d"
 

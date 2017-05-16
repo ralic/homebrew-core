@@ -1,8 +1,13 @@
 class Sqlmap < Formula
   desc "Penetration testing for SQL injection and database servers"
   homepage "http://sqlmap.org"
+<<<<<<< HEAD
   url "https://github.com/sqlmapproject/sqlmap/archive/1.1.4.tar.gz"
   sha256 "0dd97aa588f749c20b15a0d0390cfa0bbca35bac28552a3a99e031b2b1471785"
+=======
+  url "https://github.com/sqlmapproject/sqlmap/archive/1.1.5.tar.gz"
+  sha256 "4cc1c21a9948dfafb3f83f87e345b0c469d457fdd227dcf040cc9503ebc6bd6a"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   head "https://github.com/sqlmapproject/sqlmap.git"
 
   bottle :unneeded

@@ -102,6 +102,7 @@ class SubversionAT18 < Formula
       EOS
     end
 
+<<<<<<< HEAD
     if build.with? "java"
       # Java support doesn't build correctly in parallel:
       # https://github.com/Homebrew/homebrew/issues/20415
@@ -115,6 +116,10 @@ class SubversionAT18 < Formula
         EOS
       end
     end
+=======
+    # Java support doesn't build correctly in parallel: https://github.com/Homebrew/homebrew/issues/20415
+    ENV.deparallelize if build.with? "java"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
     # Use existing system zlib
     # Use dep-provided other libraries
@@ -147,6 +152,7 @@ class SubversionAT18 < Formula
       args << "RUBY=/usr/bin/ruby"
     end
 
+<<<<<<< HEAD
     # If Python is built universally, then extensions built with that Python
     # are too. This default behaviour is not desired when building an extension
     # for a single architecture.
@@ -154,6 +160,8 @@ class SubversionAT18 < Formula
       ENV["ARCHFLAGS"] = "-arch #{MacOS.preferred_arch}"
     end
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     # The system Python is built with llvm-gcc, so we override this
     # variable to prevent failures due to incompatible CFLAGS
     ENV["ac_cv_python_compile"] = ENV.cc
@@ -179,6 +187,7 @@ class SubversionAT18 < Formula
     if build.with? "perl"
       # In theory SWIG can be built in parallel, in practice...
       ENV.deparallelize
+<<<<<<< HEAD
       # Remove hard-coded ppc target, add appropriate ones
       arches = begin
         if build.universal?
@@ -189,6 +198,8 @@ class SubversionAT18 < Formula
           "-arch #{Hardware::CPU.arch_64_bit}"
         end
       end
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
       perl_core = Pathname.new(`perl -MConfig -e 'print $Config{archlib}'`)+"CORE"
       unless perl_core.exist?
         onoe "perl CORE directory does not exist in '#{perl_core}'"
@@ -196,7 +207,11 @@ class SubversionAT18 < Formula
 
       inreplace "Makefile" do |s|
         s.change_make_var! "SWIG_PL_INCLUDES",
+<<<<<<< HEAD
           "$(SWIG_INCLUDES) #{arches} -g -pipe -fno-common -DPERL_DARWIN -fno-strict-aliasing -I/usr/local/include -I#{perl_core}"
+=======
+          "$(SWIG_INCLUDES) -arch #{MacOS.preferred_arch} -g -pipe -fno-common -DPERL_DARWIN -fno-strict-aliasing -I/usr/local/include -I#{perl_core}"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
       end
       system "make", "swig-pl"
       system "make", "install-swig-pl", "DESTDIR=#{prefix}"

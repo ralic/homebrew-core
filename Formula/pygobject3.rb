@@ -34,7 +34,12 @@ class Pygobject3 < Formula
     import gi
     assert("__init__" in gi.__file__)
     EOS
+<<<<<<< HEAD
     Language::Python.each_python(build) do |python, _version|
+=======
+    Language::Python.each_python(build) do |python, pyversion|
+      ENV.prepend_path "PYTHONPATH", lib/"python#{pyversion}/site-packages"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
       system python, "test.py"
     end
   end

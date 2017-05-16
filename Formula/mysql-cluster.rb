@@ -5,9 +5,16 @@ class MysqlCluster < Formula
   sha256 "f799932e0baeb4cf61d735b662ebefba6d2d7b156cb66fc81c1bef4a4a43848d"
 
   bottle do
+<<<<<<< HEAD
     sha256 "1fc1992ed96091f6d610052ae06ecfaa263e69e0acaf12d786e2da30ff5b45df" => :sierra
     sha256 "16b479de2127b298b035838e36502fcf89539bb78c01b951f112797986bf43e5" => :el_capitan
     sha256 "efd31cfe2338bcc4c118b1a89a77e3b698429250be4dea131f645169255e9512" => :yosemite
+=======
+    rebuild 1
+    sha256 "3eec1779c488fed8866ce5648c46fb76747b9028d41db67d1d56117e6497737a" => :sierra
+    sha256 "ea45e531c06a0e6aa7c3d8d3a8cf33efc2548bc6f5406ab5a3d8630729030351" => :el_capitan
+    sha256 "6a01cbaba92ed7538facca6acacf0eb792b7eed1a887bbfbd3d5a8afe580bb7f" => :yosemite
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 
   option "with-test", "Build with unit tests"
@@ -143,6 +150,10 @@ class MysqlCluster < Formula
       #{var}/mysql-cluster
     Note that in a production system there are other parameters
     that you would set to tune the configuration.
+<<<<<<< HEAD
+=======
+    MySQL is configured to only allow connections from localhost by default
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
     Set up databases to run AS YOUR USER ACCOUNT with:
       unset TMPDIR
@@ -176,6 +187,11 @@ class MysqlCluster < Formula
     datadir=#{var}/mysql-cluster/mysqld_data
     basedir=#{opt_prefix}
     port=5000
+<<<<<<< HEAD
+=======
+    # Only allow connections from localhost
+    bind-address = 127.0.0.1
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     EOCNF
   end
 
@@ -301,7 +317,11 @@ class MysqlCluster < Formula
       "--basedir=#{prefix}", "--datadir=#{dir}", "--tmpdir=#{dir}"
 
       pid = fork do
+<<<<<<< HEAD
         exec bin/"mysqld", "--bind-address=127.0.0.1", "--datadir=#{dir}"
+=======
+        exec bin/"mysqld", "--datadir=#{dir}"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
       end
       sleep 2
 

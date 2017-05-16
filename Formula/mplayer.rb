@@ -13,7 +13,10 @@ class Mplayer < Formula
 
   head do
     url "svn://svn.mplayerhq.hu/mplayer/trunk"
+<<<<<<< HEAD
     depends_on "subversion" => :build if MacOS.version <= :leopard
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
     # When building SVN, configure prompts the user to pull FFmpeg from git.
     # Don't do that.

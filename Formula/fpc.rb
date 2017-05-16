@@ -1,6 +1,10 @@
 class Fpc < Formula
   desc "Free Pascal: multi-architecture Pascal compiler"
+<<<<<<< HEAD
   homepage "http://www.freepascal.org/"
+=======
+  homepage "https://www.freepascal.org/"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   url "https://downloads.sourceforge.net/project/freepascal/Source/3.0.2/fpc-3.0.2.source.tar.gz"
   sha256 "67fccddf5da992356f4e90d836444750ce9363608c7db8e38c077f710fcb6258"
 

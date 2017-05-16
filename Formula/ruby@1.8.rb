@@ -50,11 +50,14 @@ class RubyAT18 < Formula
       --with-vendordir=#{HOMEBREW_PREFIX}/lib/ruby/vendor_ruby
     ]
 
+<<<<<<< HEAD
     if build.universal?
       ENV.universal_binary
       args << "--with-arch=#{Hardware::CPU.universal_archs.join(",")}"
     end
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     args << "--program-suffix=#{program_suffix}" if build.with? "suffix"
     args << "--enable-install-doc" if build.with? "doc"
 

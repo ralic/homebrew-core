@@ -14,7 +14,10 @@ class Viennacl < Formula
   end
 
   depends_on "cmake" => :build
+<<<<<<< HEAD
   depends_on :macos => :snow_leopard
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   def install
     system "cmake", ".", *std_cmake_args

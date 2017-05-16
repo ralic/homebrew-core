@@ -7,7 +7,10 @@ class Rabbitmq < Formula
   bottle :unneeded
 
   depends_on "erlang"
+<<<<<<< HEAD
   depends_on "simplejson" => :python if MacOS.version <= :leopard
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   def install
     # Install the base files

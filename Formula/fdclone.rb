@@ -13,7 +13,14 @@ class Fdclone < Formula
 
   depends_on "nkf" => :build
 
+<<<<<<< HEAD
   patch :DATA
+=======
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/86107cf/fdclone/3.01b.patch"
+    sha256 "c4159db3052d7e4abec57ca719ff37f5acff626654ab4c1b513d7879dcd1eb78"
+  end
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   def install
     ENV.deparallelize
@@ -37,6 +44,7 @@ class Fdclone < Formula
     EOS
   end
 end
+<<<<<<< HEAD
 
 __END__
 diff --git a/machine.h b/machine.h
@@ -203,3 +211,5 @@ index 97aec7b..0a81bb9 100644
  
  # language code to be displayed
  #	Default: No convert
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.

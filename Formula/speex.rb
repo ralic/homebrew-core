@@ -11,6 +11,7 @@ class Speex < Formula
     sha256 "a0b3c91782b8242508adac3ebc0cd86688e75b043ea0d84f4ef7ac9940f8a21b" => :yosemite
   end
 
+<<<<<<< HEAD
   depends_on "pkg-config" => :build
   depends_on "libogg" => :recommended
 
@@ -18,6 +19,23 @@ class Speex < Formula
     ENV.deparallelize
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
+=======
+  option "with-sse", "Build with SSE support"
+
+  depends_on "pkg-config" => :build
+  depends_on "libogg" => :recommended
+  depends_on "speexdsp" => :optional
+
+  def install
+    ENV.deparallelize
+    args = %W[
+      --prefix=#{prefix}
+      --disable-debug
+      --disable-dependency-tracking
+    ]
+    args << "--enable-sse" if build.with? "sse"
+    system "./configure", *args
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     system "make", "install"
   end
 end

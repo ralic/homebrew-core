@@ -14,7 +14,10 @@ class Transmission < Formula
   option "with-nls", "Build with native language support"
 
   depends_on "pkg-config" => :build
+<<<<<<< HEAD
   depends_on "curl" if MacOS.version <= :leopard
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   depends_on "libevent"
 
   if build.with? "nls"

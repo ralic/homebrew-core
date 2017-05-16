@@ -1,7 +1,12 @@
 class Icbirc < Formula
   desc "Proxy IRC client and ICB server"
+<<<<<<< HEAD
   homepage "http://www.benzedrine.ch/icbirc.html"
   url "http://www.benzedrine.ch/icbirc-2.0.tar.gz"
+=======
+  homepage "https://www.benzedrine.ch/icbirc.html"
+  url "https://www.benzedrine.ch/icbirc-2.0.tar.gz"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   sha256 "7607c7d80fc3939ccb913c9fcc57a63d3552af3615454e406ff0e3737c0ce6bd"
 
   bottle do

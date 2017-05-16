@@ -13,8 +13,13 @@ class Texinfo < Formula
   end
 
   keg_only :provided_by_osx, <<-EOS.undent
+<<<<<<< HEAD
     Software that uses TeX, such as lilypond and octave, require a newer version
     of these files.
+=======
+    software that uses TeX, such as lilypond and octave, require a newer
+    version of these files
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   EOS
 
   def install
@@ -34,6 +39,10 @@ class Texinfo < Formula
       @bye
     EOS
     system "#{bin}/makeinfo", "test.texinfo"
+<<<<<<< HEAD
     assert_match /Hello World!/, File.read("test.info")
+=======
+    assert_match "Hello World!", File.read("test.info")
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 end

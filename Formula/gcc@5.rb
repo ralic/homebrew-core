@@ -49,12 +49,15 @@ class GccAT5 < Formula
   depends_on "isl@0.14"
   depends_on "ecj" if build.with?("java") || build.with?("all-languages")
 
+<<<<<<< HEAD
   if MacOS.version < :leopard
     # The as that comes with Tiger isn't capable of dealing with the
     # PPC asm that comes in libitm
     depends_on "cctools" => :build
   end
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   # The bottles are built on systems with the CLT installed, and do not work
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   def pour_bottle?
@@ -72,10 +75,13 @@ class GccAT5 < Formula
     # GCC will suffer build errors if forced to use a particular linker.
     ENV.delete "LD"
 
+<<<<<<< HEAD
     if MacOS.version < :leopard
       ENV["AS"] = ENV["AS_FOR_TARGET"] = "#{Formula["cctools"].bin}/as"
     end
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     if build.with? "all-languages"
       # Everything but Ada, which requires a pre-existing GCC Ada compiler
       # (gnat) to bootstrap. GCC 4.6.0 add go as a language option, but it is
@@ -113,6 +119,10 @@ class GccAT5 < Formula
       "--enable-stage1-checking",
       "--enable-checking=release",
       "--enable-lto",
+<<<<<<< HEAD
+=======
+      "--enable-plugin",
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
       # A no-op unless --HEAD is built because in head warnings will
       # raise errors. But still a good idea to include.
       "--disable-werror",
@@ -120,6 +130,7 @@ class GccAT5 < Formula
       "--with-bugurl=https://github.com/Homebrew/homebrew-core/issues",
     ]
 
+<<<<<<< HEAD
     # "Building GCC with plugin support requires a host that supports
     # -fPIC, -shared, -ldl and -rdynamic."
     args << "--enable-plugin" if MacOS.version > :tiger
@@ -128,6 +139,8 @@ class GccAT5 < Formula
     # See: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=45248
     args << "--with-dwarf2" if MacOS.version < :leopard
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     args << "--disable-nls" if build.without? "nls"
 
     if build.with?("java") || build.with?("all-languages")

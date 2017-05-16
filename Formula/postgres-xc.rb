@@ -21,7 +21,10 @@ class PostgresXc < Formula
   depends_on :arch => :x86_64
   depends_on "openssl"
   depends_on "readline"
+<<<<<<< HEAD
   depends_on "libxml2" if MacOS.version <= :leopard # Leopard libxml is too old
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   depends_on "ossp-uuid" => :recommended
   depends_on :python => :optional
 

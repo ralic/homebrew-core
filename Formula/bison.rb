@@ -13,7 +13,11 @@ class Bison < Formula
     sha256 "1ac1b43ae92fea5b04f663197309ce8b788061d31f09ba14e97dd4d5d1183d62" => :mountain_lion
   end
 
+<<<<<<< HEAD
   keg_only :provided_by_osx, "Some formulae require a newer version of bison."
+=======
+  keg_only :provided_by_osx, "some formulae require a newer version of bison"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   def install
     system "./configure", "--disable-dependency-tracking",

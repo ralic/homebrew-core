@@ -39,6 +39,11 @@ class Terminator < Formula
   end
 
   test do
+<<<<<<< HEAD
+=======
+    ENV.prepend_path "PYTHONPATH", Formula["pygtk"].opt_lib/"python2.7/site-packages/gtk-2.0"
+    ENV.prepend_path "PYTHONPATH", lib/"python2.7/site-packages"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     system "#{bin}/terminator", "--version"
   end
 end

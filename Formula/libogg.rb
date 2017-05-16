@@ -15,7 +15,11 @@ class Libogg < Formula
   end
 
   head do
+<<<<<<< HEAD
     url "https://svn.xiph.org/trunk/ogg"
+=======
+    url "https://git.xiph.org/ogg.git"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

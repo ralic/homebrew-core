@@ -19,8 +19,11 @@ class Cataclysm < Formula
   needs :cxx11
 
   depends_on "gettext"
+<<<<<<< HEAD
   # needs `set_escdelay`, which isn't present in system ncurses before 10.6
   depends_on "ncurses" if MacOS.version < :snow_leopard
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   if build.with? "tiles"
     depends_on "sdl2"
@@ -31,10 +34,13 @@ class Cataclysm < Formula
   def install
     ENV.cxx11
 
+<<<<<<< HEAD
     # cataclysm tries to #import <curses.h>, but Homebrew ncurses installs no
     # top-level headers
     ENV.append_to_cflags "-I#{Formula["ncurses"].include}/ncursesw" if MacOS.version < :snow_leopard
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     args = %W[
       NATIVE=osx RELEASE=1 OSX_MIN=#{MacOS.version}
     ]

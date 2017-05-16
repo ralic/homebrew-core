@@ -15,7 +15,14 @@ class Mcpp < Formula
   # stpcpy is a macro on macOS; trying to define it as an extern is invalid.
   # Patch from ZeroC fixing EOL comment parsing
   # https://forums.zeroc.com/forum/bug-reports/5445-mishap-in-slice-compilers?t=5309
+<<<<<<< HEAD
   patch :DATA
+=======
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/3fd7fba/mcpp/2.7.2.patch"
+    sha256 "4bc6a6bd70b67cb78fc48d878cd264b32d7bd0b1ad9705563320d81d5f1abb71"
+  end
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
@@ -24,6 +31,7 @@ class Mcpp < Formula
     system "make", "install"
   end
 end
+<<<<<<< HEAD
 
 __END__
 diff --git a/src/internal.H b/src/internal.H
@@ -138,3 +146,5 @@ index 4759469..4e008fa 100644
      FILEINFO *  file;
      int         line;
  
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.

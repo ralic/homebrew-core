@@ -1,8 +1,13 @@
 class Gitbucket < Formula
   desc "Git platform powered by Scala offering"
   homepage "https://github.com/gitbucket/gitbucket"
+<<<<<<< HEAD
   url "https://github.com/gitbucket/gitbucket/releases/download/4.12/gitbucket.war"
   sha256 "230b8e87625c19aec3137eaaf40ee73f45b588044d4c4d355ee291dd7ddcddd2"
+=======
+  url "https://github.com/gitbucket/gitbucket/releases/download/4.12.1/gitbucket.war"
+  sha256 "22bdf74b31a0e8ea86ff469f88d0e3947b097cb6dd7c5f8b8d322959c9dd1f3e"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   head do
     url "https://github.com/gitbucket/gitbucket.git"

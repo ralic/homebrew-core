@@ -6,9 +6,16 @@ class PerconaServerAT55 < Formula
   sha256 "2c5f23a5bd41e36c681d882b94e021a2fe34acfb3951945146ee2ead2aeb7f1c"
 
   bottle do
+<<<<<<< HEAD
     sha256 "122ac9f6d7d33fafed9927c8bccfd933f82df0e3b3a64a40733e86088e07647d" => :sierra
     sha256 "14dd4085444332e5f05fbcd0bb26e0fa8573ce9569e7817939e4b1e9a3018aad" => :el_capitan
     sha256 "cf5ff63513d937d546119e3da98e2ca54afab297f1c062dbcfc3221ab94ccb78" => :yosemite
+=======
+    rebuild 2
+    sha256 "77f1c5c1e63c8d71b3c744a3c8f1565f9a9eb82816c478111a0f86bf09ae7fba" => :sierra
+    sha256 "4f6b288a457ac54d6ee39f3aa6ed5f1b1337583ef66ea41d554c65d9a11e52f1" => :el_capitan
+    sha256 "bbe21e62e670e24e32d8950b837e51c7abf7bba21a641ef37918548ddfd72c67" => :yosemite
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 
   keg_only :versioned_formula
@@ -74,12 +81,15 @@ class PerconaServerAT55 < Formula
     # Compile with readline unless libedit is explicitly chosen
     args << "-DWITH_READLINE=yes" if build.without? "libedit"
 
+<<<<<<< HEAD
     # Make universal for binding to universal applications
     if build.universal?
       ENV.universal_binary
       args << "-DCMAKE_OSX_ARCHITECTURES=#{Hardware::CPU.universal_archs.as_cmake_arch_flags}"
     end
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     # Build with local infile loading support
     args << "-DENABLED_LOCAL_INFILE=1" if build.include? "enable-local-infile"
 
@@ -104,6 +114,18 @@ class PerconaServerAT55 < Formula
     libexec.mkpath
     mv "#{bin}/mysqlaccess", libexec
     mv "#{bin}/mysqlaccess.conf", libexec
+<<<<<<< HEAD
+=======
+
+    # Install my.cnf that binds to 127.0.0.1 by default
+    (buildpath/"my.cnf").write <<-EOS.undent
+      # Default Homebrew MySQL server config
+      [mysqld]
+      # Only allow connections from localhost
+      bind-address = 127.0.0.1
+    EOS
+    etc.install "my.cnf"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 
   def caveats; <<-EOS.undent
@@ -125,6 +147,11 @@ class PerconaServerAT55 < Formula
     A "/etc/my.cnf" from another install may interfere with a Homebrew-built
     server starting up correctly.
 
+<<<<<<< HEAD
+=======
+    MySQL is configured to only allow connections from localhost by default
+
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     To connect:
         mysql -uroot
     EOS
@@ -151,4 +178,14 @@ class PerconaServerAT55 < Formula
     </plist>
     EOS
   end
+<<<<<<< HEAD
+=======
+
+  test do
+    system "/bin/sh", "-n", "#{bin}/mysqld_safe"
+    (prefix/"mysql-test").cd do
+      system "./mysql-test-run.pl", "status", "--vardir=#{testpath}"
+    end
+  end
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 end

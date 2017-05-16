@@ -13,7 +13,11 @@ class OpenalSoft < Formula
     sha256 "819886eab2909ebcff2edb16c39ede1800ec987e193b0fdfce8d4047636fff17" => :mavericks
   end
 
+<<<<<<< HEAD
   keg_only :provided_by_osx, "macOS provides OpenAL.framework."
+=======
+  keg_only :provided_by_osx, "macOS provides OpenAL.framework"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   depends_on "pkg-config" => :build
   depends_on "cmake" => :build

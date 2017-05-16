@@ -11,8 +11,11 @@ class PhantomjsAT192 < Formula
     sha256 "ac9b23318fd500de6bee2447a79e1fe57c8f5d6c0aab6df6a003e27435ce8cf6" => :yosemite
   end
 
+<<<<<<< HEAD
   depends_on :macos => :snow_leopard
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   def install
     bin.install "bin/phantomjs"
   end

@@ -98,6 +98,10 @@ class GccAT49 < Formula
       "--enable-stage1-checking",
       "--enable-checking=release",
       "--enable-lto",
+<<<<<<< HEAD
+=======
+      "--enable-plugin",
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
       # Use 'bootstrap-debug' build configuration to force stripping of object
       # files prior to comparison during bootstrap (broken by Xcode 6.3).
       "--with-build-config=bootstrap-debug",
@@ -111,6 +115,7 @@ class GccAT49 < Formula
       "MAKEINFO=missing",
     ]
 
+<<<<<<< HEAD
     # "Building GCC with plugin support requires a host that supports
     # -fPIC, -shared, -ldl and -rdynamic."
     args << "--enable-plugin" if MacOS.version > :tiger
@@ -119,6 +124,8 @@ class GccAT49 < Formula
     # See: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=45248
     args << "--with-dwarf2" if MacOS.version < :leopard
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     args << "--disable-nls" if build.without? "nls"
 
     if build.with?("java") || build.with?("all-languages")

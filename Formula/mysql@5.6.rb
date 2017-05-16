@@ -3,11 +3,20 @@ class MysqlAT56 < Formula
   homepage "https://dev.mysql.com/doc/refman/5.6/en/"
   url "https://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.36.tar.gz"
   sha256 "0af81a5538fc7fe2b747295dfa96589ace8831d2a7d4a26660fca456babeb147"
+<<<<<<< HEAD
 
   bottle do
     sha256 "4e47145445eb66c106d40b15a46aa729b36a93c04d1aa93ac3ac7fa5ad63e78c" => :sierra
     sha256 "b12ae00a87ee2395b7f7883a689087ca2dc2e8097532daf375cde4e574b61638" => :el_capitan
     sha256 "963406c85636c3fc81fe41236a0f87b787795196a0e024dfc97f6eb762b8fe8e" => :yosemite
+=======
+  revision 1
+
+  bottle do
+    sha256 "2b6d58ac36dd6c175fbd67d063560cf33063a3bc0536d6314bf42cf997c3ecea" => :sierra
+    sha256 "6a780c7b0d016bbbf3b73d2861a7498e093c0dc339d1db492884a75e64c28f31" => :el_capitan
+    sha256 "9bfe50e8d182381909c48e5e414b402987b14a5ab12b13c9c235fc95cd08e393" => :yosemite
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 
   keg_only :versioned_formula
@@ -48,7 +57,10 @@ class MysqlAT56 < Formula
       -DINSTALL_DOCDIR=share/doc/#{name}
       -DINSTALL_INFODIR=share/info
       -DINSTALL_MYSQLSHAREDIR=share/mysql
+<<<<<<< HEAD
       -DWITH_SSL=yes
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
       -DWITH_SSL=system
       -DDEFAULT_CHARSET=utf8
       -DDEFAULT_COLLATION=utf8_general_ci
@@ -107,6 +119,18 @@ class MysqlAT56 < Formula
 
     libexec.install bin/"mysqlaccess"
     libexec.install bin/"mysqlaccess.conf"
+<<<<<<< HEAD
+=======
+
+    # Install my.cnf that binds to 127.0.0.1 by default
+    (buildpath/"my.cnf").write <<-EOS.undent
+      # Default Homebrew MySQL server config
+      [mysqld]
+      # Only allow connections from localhost
+      bind-address = 127.0.0.1
+    EOS
+    etc.install "my.cnf"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 
   def post_install
@@ -123,6 +147,11 @@ class MysqlAT56 < Formula
     A "/etc/my.cnf" from another install may interfere with a Homebrew-built
     server starting up correctly.
 
+<<<<<<< HEAD
+=======
+    MySQL is configured to only allow connections from localhost by default
+
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     To connect:
         mysql -uroot
     EOS
@@ -142,7 +171,10 @@ class MysqlAT56 < Formula
       <key>ProgramArguments</key>
       <array>
         <string>#{opt_bin}/mysqld_safe</string>
+<<<<<<< HEAD
         <string>--bind-address=127.0.0.1</string>
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
         <string>--datadir=#{datadir}</string>
       </array>
       <key>RunAtLoad</key>
@@ -162,7 +194,11 @@ class MysqlAT56 < Formula
       "--basedir=#{prefix}", "--datadir=#{dir}", "--tmpdir=#{dir}"
 
       pid = fork do
+<<<<<<< HEAD
         exec bin/"mysqld", "--bind-address=127.0.0.1", "--datadir=#{dir}"
+=======
+        exec bin/"mysqld", "--datadir=#{dir}"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
       end
       sleep 2
 

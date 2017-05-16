@@ -1,7 +1,13 @@
 class Mikutter < Formula
+<<<<<<< HEAD
   desc "Extensible Twitter client."
   homepage "http://mikutter.hachune.net"
   url "http://mikutter.hachune.net/bin/mikutter.3.5.6.tar.gz"
+=======
+  desc "Extensible Twitter client"
+  homepage "https://mikutter.hachune.net/"
+  url "https://mikutter.hachune.net/bin/mikutter.3.5.6.tar.gz"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   sha256 "6152cdf9203ed8ff2a5d862c5d6fa76953b399caf21ad93c6bdc920b7c35ee8c"
   head "git://toshia.dip.jp/mikutter.git", :branch => "develop"
 

@@ -13,6 +13,7 @@ class LibunwindHeaders < Formula
   end
 
   keg_only :provided_by_osx,
+<<<<<<< HEAD
     "This package includes official development headers not installed by Apple."
 
   def install
@@ -26,6 +27,11 @@ class LibunwindHeaders < Formula
         "Availability.h", "AvailabilityMacros.h"
     end
 
+=======
+    "this formula includes official development headers not installed by Apple"
+
+  def install
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     include.install Dir["include/*"]
     (include/"libunwind").install Dir["src/*.h*"]
     (include/"libunwind/libunwind_priv.h").unlink

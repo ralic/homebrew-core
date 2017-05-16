@@ -14,7 +14,11 @@ class TclTk < Formula
   end
 
   keg_only :provided_by_osx,
+<<<<<<< HEAD
     "Tk installs some X11 headers and OS X provides an (older) Tcl/Tk."
+=======
+    "tk installs some X11 headers and macOS provides an (older) Tcl/Tk"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   deprecated_option "enable-threads" => "with-threads"
 
@@ -34,10 +38,13 @@ class TclTk < Formula
     sha256 "72667ecbbd41af740157ee346db77734d1245b41dffc13ac80ca678dd3ccb515"
   end
 
+<<<<<<< HEAD
   # sqlite won't compile on Tiger due to missing function;
   # patch submitted upstream: http://thread.gmane.org/gmane.comp.db.sqlite.general/83257
   patch :DATA if MacOS.version < :leopard
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   def install
     args = ["--prefix=#{prefix}", "--mandir=#{man}"]
     args << "--enable-threads" if build.with? "threads"
@@ -84,6 +91,7 @@ class TclTk < Formula
     assert_equal "honk", pipe_output("#{bin}/tclsh", "puts honk\n").chomp
   end
 end
+<<<<<<< HEAD
 
 __END__
 diff --git a/pkgs/sqlite3.8.8.3/generic/sqlite3.c b/pkgs/sqlite3.8.8.3/generic/sqlite3.c
@@ -137,3 +145,5 @@ index 7d513fa..b1d968a 100644
                                   (void * volatile *)&_sqliteZone_);
      }while(!_sqliteZone_);
      if( !success ){
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.

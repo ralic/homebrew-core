@@ -13,7 +13,11 @@ class Rogue < Formula
   end
 
   def install
+<<<<<<< HEAD
     ENV.ncurses_define if MacOS.version >= :snow_leopard
+=======
+    ENV.ncurses_define
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"

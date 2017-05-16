@@ -33,7 +33,11 @@ class Go < Formula
   option "without-godoc", "godoc will not be installed for you"
   option "without-race", "Build without race detector"
 
+<<<<<<< HEAD
  depends_on :macos => :lion
+=======
+  depends_on :macos => :mountain_lion
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   # Don't update this unless this version cannot bootstrap the new version.
   resource "gobootstrap" do

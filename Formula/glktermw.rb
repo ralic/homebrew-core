@@ -12,7 +12,11 @@ class Glktermw < Formula
     sha256 "9e1cce9e7bbc7d1bb1ea781bcd49c8cd1a3a933ca00637bf5c637a5dfa7c5ccc" => :yosemite
   end
 
+<<<<<<< HEAD
   keg_only "Conflicts with other Glk libraries"
+=======
+  keg_only "conflicts with other Glk libraries"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   def install
     inreplace "gtoption.h", "/* #define LOCAL_NCURSESW */", "#define LOCAL_NCURSESW"

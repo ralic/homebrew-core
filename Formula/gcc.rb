@@ -1,4 +1,5 @@
 class Gcc < Formula
+<<<<<<< HEAD
   def arch
     if MacOS.prefer_64_bit?
       "x86_64"
@@ -14,10 +15,15 @@ class Gcc < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
   revision 1
+=======
+  desc "GNU compiler collection"
+  homepage "https://gcc.gnu.org/"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   head "svn://gcc.gnu.org/svn/gcc/trunk"
 
   stable do
+<<<<<<< HEAD
     url "https://ftp.gnu.org/gnu/gcc/gcc-6.3.0/gcc-6.3.0.tar.bz2"
     mirror "https://ftpmirror.gnu.org/gcc/gcc-6.3.0/gcc-6.3.0.tar.bz2"
     sha256 "f06ae7f3f790fbf0f018f6d40e844451e6bc3b7bc96e128e63b09825c1f8b29f"
@@ -38,14 +44,33 @@ class Gcc < Formula
   option "without-fortran", "Build without the gfortran compiler"
   # enabling multilib on a host that can't run 64-bit results in build failures
   option "without-multilib", "Build without multilib support" if MacOS.prefer_64_bit?
+=======
+    url "https://ftp.gnu.org/gnu/gcc/gcc-7.1.0/gcc-7.1.0.tar.bz2"
+    mirror "https://ftpmirror.gnu.org/gcc/gcc-7.1.0/gcc-7.1.0.tar.bz2"
+    sha256 "8a8136c235f64c6fef69cac0d73a46a1a09bb250776a050aec8f9fc880bebc17"
+  end
+
+  bottle do
+    sha256 "a9e9e939786a0f13c75dfbfe47c12b1e0b0c577f2aae942dfc16d2f8d0fd487c" => :sierra
+    sha256 "e237e79704d0738745ecff5286d9466624ecf942761c2735467b04f1de6fbd68" => :el_capitan
+    sha256 "551031101225e76d9268f2ac5bdddc48a24c8dd7810aeccca8e95f481ae5b1e0" => :yosemite
+  end
+
+  option "with-jit", "Build just-in-time compiler"
+  option "with-nls", "Build with native language support (localization)"
+  option "without-multilib", "Build without multilib support"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   depends_on "gmp"
   depends_on "libmpc"
   depends_on "mpfr"
   depends_on "isl"
+<<<<<<< HEAD
   depends_on "ecj" if build.with?("java") || build.with?("all-languages")
 
   fails_with :gcc_4_0
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip
@@ -74,10 +99,23 @@ class Gcc < Formula
     sha256 "863957f90a934ee8f89707980473769cff47ca0663c3906992da6afb242fb220"
   end
 
+<<<<<<< HEAD
+=======
+  # Use -headerpad_max_install_names in the build,
+  # otherwise lto1 load commands cannot be edited on El Capitan
+  if MacOS.version == :el_capitan
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/32cf103/gcc/7.1.0-headerpad.patch"
+      sha256 "dd884134e49ae552b51085116e437eafa63460b57ce84252bfe7a69df8401640"
+    end
+  end
+
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   def install
     # GCC will suffer build errors if forced to use a particular linker.
     ENV.delete "LD"
 
+<<<<<<< HEAD
     if build.with? "all-languages"
       # Everything but Ada, which requires a pre-existing GCC Ada compiler
       # (gnat) to bootstrap. GCC 4.6.0 adds go as a language option, but it is
@@ -101,6 +139,21 @@ class Gcc < Formula
 
     args = [
       "--build=#{arch}-apple-darwin#{osmajor}",
+=======
+    # We avoiding building:
+    #  - Ada, which requires a pre-existing GCC Ada compiler to bootstrap
+    #  - Go, currently not supported on macOS
+    #  - BRIG
+    languages = %w[c c++ objc obj-c++ fortran]
+
+    # JIT compiler is off by default, enabling it has performance cost
+    languages << "jit" if build.with? "jit"
+
+    osmajor = `uname -r`.chomp
+
+    args = [
+      "--build=x86_64-apple-darwin#{osmajor}",
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
       "--prefix=#{prefix}",
       "--libdir=#{lib}/gcc/#{version_suffix}",
       "--enable-languages=#{languages.join(",")}",
@@ -111,6 +164,7 @@ class Gcc < Formula
       "--with-mpc=#{Formula["libmpc"].opt_prefix}",
       "--with-isl=#{Formula["isl"].opt_prefix}",
       "--with-system-zlib",
+<<<<<<< HEAD
       "--enable-stage1-checking",
       "--enable-checking=release",
       "--enable-lto",
@@ -118,10 +172,14 @@ class Gcc < Formula
       # files prior to comparison during bootstrap (broken by Xcode 6.3).
       "--with-build-config=bootstrap-debug",
       "--disable-werror",
+=======
+      "--enable-checking=release",
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
       "--with-pkgversion=Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip,
       "--with-bugurl=https://github.com/Homebrew/homebrew-core/issues",
     ]
 
+<<<<<<< HEAD
     # The pre-Mavericks toolchain requires the older DWARF-2 debugging data
     # format to avoid failure during the stage 3 comparison of object files.
     # See: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=45248
@@ -140,6 +198,11 @@ class Gcc < Formula
     end
 
     args << "--enable-host-shared" if build.with?("jit") || build.with?("all-languages")
+=======
+    args << "--disable-multilib" if build.without?("multilib")
+    args << "--disable-nls" if build.without? "nls"
+    args << "--enable-host-shared" if build.with?("jit")
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
     # Ensure correct install names when linking against libgcc_s;
     # see discussion in https://github.com/Homebrew/homebrew/pull/34303
@@ -154,12 +217,19 @@ class Gcc < Formula
       end
 
       system "../configure", *args
+<<<<<<< HEAD
       system "make", "bootstrap"
       system "make", "install"
 
       if build.with?("fortran") || build.with?("all-languages")
         bin.install_symlink bin/"gfortran-#{version_suffix}" => "gfortran"
       end
+=======
+      system "make"
+      system "make", "install"
+
+      bin.install_symlink bin/"gfortran-#{version_suffix}" => "gfortran"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     end
 
     # Handle conflicts between GCC formulae and avoid interfering
@@ -177,6 +247,7 @@ class Gcc < Formula
     File.rename file, "#{dir}/#{base}-#{suffix}#{ext}"
   end
 
+<<<<<<< HEAD
   def caveats
     if build.with?("multilib") then <<-EOS.undent
       GCC has been built with multilib support. Notably, OpenMP may not work:
@@ -187,6 +258,8 @@ class Gcc < Formula
     end
   end
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   test do
     (testpath/"hello-c.c").write <<-EOS.undent
       #include <stdio.h>
@@ -210,6 +283,7 @@ class Gcc < Formula
     system "#{bin}/g++-#{version_suffix}", "-o", "hello-cc", "hello-cc.cc"
     assert_equal "Hello, world!\n", `./hello-cc`
 
+<<<<<<< HEAD
     if build.with?("fortran") || build.with?("all-languages")
       fixture = <<-EOS.undent
         integer,parameter::m=10000
@@ -227,5 +301,20 @@ class Gcc < Formula
       system "#{bin}/gfortran", "-o", "test", "in.o"
       assert_equal "done", `./test`.strip
     end
+=======
+    (testpath/"test.f90").write <<-EOS.undent
+      integer,parameter::m=10000
+      real::a(m), b(m)
+      real::fact=0.5
+
+      do concurrent (i=1:m)
+        a(i) = a(i) + fact*b(i)
+      end do
+      write(*,"(A)") "Done"
+      end
+    EOS
+    system "#{bin}/gfortran", "-o", "test", "test.f90"
+    assert_equal "Done\n", `./test`
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 end

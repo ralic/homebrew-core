@@ -1,8 +1,13 @@
 class YoutubeDl < Formula
   desc "Download YouTube videos from the command-line"
   homepage "https://rg3.github.io/youtube-dl/"
+<<<<<<< HEAD
   url "https://github.com/rg3/youtube-dl/releases/download/2017.05.01/youtube-dl-2017.05.01.tar.gz"
   sha256 "58e2151634a66fa9ab4a98978fa72bf15990ec1c088ac7e4393cca00c9a32e53"
+=======
+  url "https://github.com/rg3/youtube-dl/releases/download/2017.05.14/youtube-dl-2017.05.14.tar.gz"
+  sha256 "363e8f16752dfc35730351d3ead56ebd34ffa394864f7aa00ebf07d6ec5e8793"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   head do
     url "https://github.com/rg3/youtube-dl.git"

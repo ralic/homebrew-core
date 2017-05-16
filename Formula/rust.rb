@@ -41,6 +41,11 @@ class Rust < Formula
   depends_on "openssl"
   depends_on "libssh2"
 
+<<<<<<< HEAD
+=======
+  conflicts_with "cargo-completion", :because => "both install shell completion for cargo"
+
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   # According to the official readme, GCC 4.7+ is required
   fails_with :gcc_4_0
   fails_with :gcc

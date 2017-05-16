@@ -1,6 +1,10 @@
 class Putty < Formula
   desc "Implementation of Telnet and SSH"
+<<<<<<< HEAD
   homepage "http://www.chiark.greenend.org.uk/~sgtatham/putty/"
+=======
+  homepage "https://www.chiark.greenend.org.uk/~sgtatham/putty/"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   url "https://the.earth.li/~sgtatham/putty/0.69/putty-0.69.tar.gz"
   sha256 "b7dad241ff01b0cbb9dc4c1471ec7cacf8f08d98a581aeb2f336da3c0eb96ad1"
 

@@ -25,7 +25,11 @@ class ImapUw < Formula
               "SSLINCLUDE=#{Formula["openssl"].opt_include}/openssl"
       s.gsub! "SSLLIB=/usr/lib",
               "SSLLIB=#{Formula["openssl"].opt_lib}"
+<<<<<<< HEAD
       s.gsub! "-DMAC_OSX_KLUDGE=1", "" if MacOS.version >= :snow_leopard
+=======
+      s.gsub! "-DMAC_OSX_KLUDGE=1", ""
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     end
     inreplace "src/osdep/unix/ssl_unix.c", "#include <x509v3.h>\n#include <ssl.h>",
                                            "#include <ssl.h>\n#include <x509v3.h>"

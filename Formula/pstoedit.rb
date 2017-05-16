@@ -33,7 +33,14 @@ class Pstoedit < Formula
   #   it exists, it skips blind attempts to find plugins.
   # As PSTOEDITLIBDIR is always defined by makefile, the blind fallback will
   # be attempted only in obscure environments.
+<<<<<<< HEAD
   patch :DATA
+=======
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/fa1823b/pstoedit/3.70.patch"
+    sha256 "9af1bbc9db97f5d5dc92816e5c5fdd5f98904f64d1ab0dd6fcdcde1fd8606ce6"
+  end
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   def install
     ENV.deparallelize
@@ -47,6 +54,7 @@ class Pstoedit < Formula
     assert File.exist?("test.pdf")
   end
 end
+<<<<<<< HEAD
 
 __END__
 diff --git a/doc/pstoedit.1 b/doc/pstoedit.1
@@ -187,3 +195,5 @@ index 7f66d23..a16f57d 100644
  
  	// delete[]plugindir;
  }
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.

@@ -90,6 +90,10 @@ class Fontforge < Formula
 
   test do
     system bin/"fontforge", "-version"
+<<<<<<< HEAD
+=======
+    ENV.append_path "PYTHONPATH", lib+"python2.7/site-packages"
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     system "python", "-c", "import fontforge"
   end
 end

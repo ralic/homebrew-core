@@ -26,7 +26,11 @@ class Cairo < Formula
   keg_only :provided_pre_mountain_lion
 
   depends_on "pkg-config" => :build
+<<<<<<< HEAD
   depends_on :x11 => :optional if MacOS.version > :leopard
+=======
+  depends_on :x11 => :optional
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   depends_on "freetype"
   depends_on "fontconfig"
   depends_on "libpng"

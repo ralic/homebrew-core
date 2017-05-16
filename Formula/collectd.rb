@@ -51,7 +51,10 @@ class Collectd < Formula
       --localstatedir=#{var}
     ]
 
+<<<<<<< HEAD
     args << "--disable-embedded-perl" if MacOS.version <= :leopard
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     args << "--disable-java" if build.without? "java"
     args << "--enable-python" if build.with? "python"
     args << "--enable-write_riemann" if build.with? "protobuf-c"

@@ -4,6 +4,7 @@ class GnuTypist < Formula
   url "https://ftp.gnu.org/gnu/gtypist/gtypist-2.9.5.tar.xz"
   mirror "https://ftpmirror.gnu.org/gtypist/gtypist-2.9.5.tar.xz"
   sha256 "c13af40b12479f8219ffa6c66020618c0ce305ad305590fde02d2c20eb9cf977"
+<<<<<<< HEAD
 
   bottle do
     rebuild 1
@@ -12,13 +13,28 @@ class GnuTypist < Formula
     sha256 "38fbd18da939021fe2ba02f505109a68df569d5e89629b97bfb52366be917dae" => :yosemite
     sha256 "e6242d04086f6519b7d1e8150e03c28e83ade7e34162132010d1dc68abb80420" => :mavericks
     sha256 "14030bc96288152a37b885d74c351be91ba18c03d48430ad95b9294d46ff0544" => :mountain_lion
+=======
+  revision 1
+
+  bottle do
+    sha256 "014e293ce1ed514fe95e6fce4cbedefdc876a51b6d38a740183b8ce959899e5a" => :sierra
+    sha256 "75fcb398d3997d6d9357bb6cf5638d2e10e469ce114b344865d37112754cc7af" => :el_capitan
+    sha256 "285c918d6b2240e294e6b192aff25de0f0383f9ac645d8883e04e3443e52b674" => :yosemite
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   end
 
   depends_on "gettext"
 
   # Use Apple's ncurses instead of ncursesw.
   # TODO: use an IFDEF for apple and submit upstream
+<<<<<<< HEAD
   patch :DATA
+=======
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/42c4b96/gnu-typist/2.9.5.patch"
+    sha256 "a408ecb8be3ffdc184fe1fa94c8c2a452f72b181ce9be4f72557c992508474db"
+  end
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   def install
     # libiconv is not linked properly without this
@@ -39,6 +55,7 @@ class GnuTypist < Formula
     Process.kill("TERM", session)
   end
 end
+<<<<<<< HEAD
 
 __END__
 diff --git a/configure b/configure
@@ -145,3 +162,5 @@ index 8eab3d3..e3194df 100644
  #endif
 
  #include <stdlib.h>
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.

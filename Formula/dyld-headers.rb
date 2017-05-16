@@ -8,13 +8,17 @@ class DyldHeaders < Formula
 
   keg_only :provided_by_osx
 
+<<<<<<< HEAD
   # Use Tiger-style availability macros
   patch :DATA if MacOS.version < :leopard
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
   def install
     include.install Dir["include/*"]
   end
 end
+<<<<<<< HEAD
 
 __END__
 diff --git a/include/dlfcn.h b/include/dlfcn.h
@@ -260,3 +264,5 @@ index 49d5775..2467b29 100644
  #include <mach-o/dyld.h>
  #include <mach-o/dyld_images.h>
  
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.

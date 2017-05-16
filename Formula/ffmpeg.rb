@@ -179,6 +179,7 @@ class Ffmpeg < Formula
 
     system "./configure", *args
 
+<<<<<<< HEAD
     if MacOS.prefer_64_bit?
       inreplace "config.mak" do |s|
         shflags = s.get_make_var "SHFLAGS"
@@ -188,6 +189,8 @@ class Ffmpeg < Formula
       end
     end
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     system "make", "install"
 
     if build.with? "tools"

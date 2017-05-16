@@ -13,6 +13,7 @@ class Freeimage < Formula
     :using => FreeimageHttpDownloadStrategy
   version "3.17.0"
   sha256 "fbfc65e39b3d4e2cb108c4ffa8c41fd02c07d4d436c594fff8dab1a6d5297f89"
+<<<<<<< HEAD
 
   bottle do
     cellar :any
@@ -24,6 +25,21 @@ class Freeimage < Formula
   end
 
   patch :DATA
+=======
+  revision 1
+
+  bottle do
+    cellar :any
+    sha256 "c3489ce29935ad196057e6ff95485dfc4442e7e26c4031523623e28bb587fad3" => :sierra
+    sha256 "910ae7448a650a9415ad61e86635daed39177537f891a16bd036f444c96bdbfb" => :el_capitan
+    sha256 "aec3219d5a015a5df4fbc81da4d74ac3c2a6f2d528bfbca770c217775f065e19" => :yosemite
+  end
+
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/4dcf528/freeimage/3.17.0.patch"
+    sha256 "8ef390fece4d2166d58e739df76b5e7996c879efbff777a8a94bcd1dd9a313e2"
+  end
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
 
   # fix GCC 5.0 compile.
   patch do
@@ -51,6 +67,7 @@ class Freeimage < Formula
     system "./test"
   end
 end
+<<<<<<< HEAD
 
 __END__
 diff --git a/Makefile.fip b/Makefile.fip
@@ -172,3 +189,5 @@ index 92f6358..264b70f
  	ln -sf $(SHAREDLIB) $(INSTALLDIR)/$(VERLIBNAME)
  	ln -sf $(VERLIBNAME) $(INSTALLDIR)/$(LIBNAME)	
  #	ldconfig
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.

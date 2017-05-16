@@ -34,11 +34,14 @@ class RubyAT21 < Formula
       --with-vendordir=#{HOMEBREW_PREFIX}/lib/ruby/vendor_ruby
     ]
 
+<<<<<<< HEAD
     if build.universal?
       ENV.universal_binary
       args << "--with-arch=#{Hardware::CPU.universal_archs.join(",")}"
     end
 
+=======
+>>>>>>> kettle: fix hardcoded /usr/local idiocy.
     args << "--program-suffix=#{program_suffix}" if build.with? "suffix"
     args << "--with-out-ext=tk" if build.without? "tcltk"
     args << "--disable-install-doc" if build.without? "doc"
